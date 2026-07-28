@@ -4,9 +4,9 @@
 
 This Codex skill turns a brief, script, or visual reference into a controlled Chinese-ink video workflow—from style approval and layered scene formation to smooth previews and final QA.
 
-![分层水墨动态样片](examples/worker-factory/demo.gif)
+![AI 百家争鸣水墨动态样片](examples/ai-ink-schools/demo.gif)
 
-> 示例：现代拖车制造厂中的亚裔工人。画面采用表现主义都市水墨质感，并通过环境底板、人物、器械、墨迹与纸纹等层级逐步显影。
+> 示例：OpenAI、Anthropic、Gemini 与 Kimi 在同一幅竖版水墨山水中形成。画面从空宣纸开始，环境墨势、色洗与品牌标志按照空间顺序晕染显影，最终回到批准母版。
 
 ## 它解决什么问题
 
@@ -18,6 +18,7 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
 - 从母版关键帧生成混合七层 Layer Pack，减少抠像白洞
 - 让湿墨负责空间与气氛，干笔和线描负责主体结构
 - 以水痕、积墨、笔触和轮廓锁定完成“形成”，而不是整图简单淡入
+- 让环境、色洗和主体共享同一套空间到达场，避免只让 Logo 或人物单独淡入
 - 使用 48fps 中间渲染与 24fps 输出，降低低清预览的卡顿感
 - 通过逐镜审计、局部重渲染和最终 QA 保持跨镜头一致性
 
@@ -119,14 +120,14 @@ python -m pip install -r requirements.txt
 ```
 
 ```text
-把已批准的工厂关键帧拆成 Layer Pack，做 5 秒低清动态样片。
-要求人物、工具和厂房通过不同墨层形成，不要整张图一起淡入。
+把已批准的竖版关键帧拆成 Layer Pack，做 5 秒低清动态样片。
+要求先从宣纸晕染形成环境，再让主体轮廓锁形，不要只让 Logo 单独淡入。
 ```
 
 ## 示例文件
 
-- [批准的 B2 关键帧](examples/worker-factory/keyframe-b2.png)
-- [5 秒低清 MP4 样片](examples/worker-factory/layered-ink-proof.mp4)
+- [批准的竖版 B2 关键帧](examples/ai-ink-schools/keyframe-v04.png)
+- [5 秒竖版 MP4 样片](examples/ai-ink-schools/ai-ink-formation.mp4)
 
 ## 仓库结构
 
@@ -135,6 +136,7 @@ python -m pip install -r requirements.txt
 ├── README.md
 ├── requirements.txt
 ├── examples/
+│   ├── ai-ink-schools/
 │   └── worker-factory/
 └── skill/
     └── create-chinese-ink-video/
@@ -154,4 +156,4 @@ python -m pip install -r requirements.txt
 
 ## 项目状态
 
-当前版本已经过竖屏现代工厂场景测试，覆盖强水墨静态迁移、混合七层拆分、均匀晕染形成和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
+当前版本已经过竖屏人物工作场景和 AI 品牌山水场景测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
