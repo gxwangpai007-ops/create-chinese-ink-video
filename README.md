@@ -4,9 +4,9 @@
 
 This Codex skill turns a brief, script, or visual reference into a controlled Chinese-ink video workflow—from style approval and layered scene formation to smooth previews and final QA.
 
-![AI 百家争鸣水墨动态样片](examples/ai-ink-schools/demo.gif)
+![马斯克、火箭与特斯拉连续流体水墨显影](examples/musk-fluid-ink/demo.gif)
 
-> 示例：OpenAI、Anthropic、Gemini 与 Kimi 在同一幅竖版水墨山水中形成。画面从空宣纸开始，环境墨势、色洗与品牌标志按照空间顺序晕染显影，最终回到批准母版。
+> 连续流体示例：火箭缓慢升空，喷口注入的墨流像墨在水中一样卷曲、回流和扩散；同一流体墨场依次带出特斯拉、道路与马斯克，最后由干笔轮廓锁定人物结构。
 
 ## 它解决什么问题
 
@@ -19,6 +19,7 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
 - 让湿墨负责空间与气氛，干笔和线描负责主体结构
 - 以水痕、积墨、笔触和轮廓锁定完成“形成”，而不是整图简单淡入
 - 让环境、色洗和主体共享同一套空间到达场，避免只让 Logo 或人物单独淡入
+- 用连续流体墨场同时驱动可见墨流和累积显影，形成卷曲、回流、分叉与缓慢均匀扩散
 - 使用 48fps 中间渲染与 24fps 输出，降低低清预览的卡顿感
 - 通过逐镜审计、局部重渲染和最终 QA 保持跨镜头一致性
 
@@ -68,6 +69,21 @@ ink / atmosphere effects
 - 从母版图生成混合 Layer Pack
 - 抽取 QA 帧并分析相邻帧变化
 - 编码平滑低清预览并探测视频参数
+- 生成连续流体密度视频和与其严格同步的累积显影母版
+
+### 连续流体墨场显影
+
+当场景需要“墨在水里散开”或“喷气经过后画面形成”时，Skill 使用确定性的二维流体模拟，不再沿路径堆叠圆形烟团：
+
+```text
+运动墨源
+→ 流体速度、压力与颜料密度
+→ 可见墨层
+→ 累积显影母版
+→ 环境、物体、人物与干笔结构依次形成
+```
+
+同一密度场负责墨流和显影，避免烟雾与主体淡入彼此脱节。仓库中的 `render_fluid_ink_matte.py` 可以直接输出两路同步视频。
 
 ## 安装
 
@@ -126,6 +142,8 @@ python -m pip install -r requirements.txt
 
 ## 示例文件
 
+- [马斯克连续流体水墨完整 MP4](examples/musk-fluid-ink/musk-fluid-ink-v07.mp4)
+- [马斯克连续流体关键帧联排](examples/musk-fluid-ink/contact-sheet.jpg)
 - [批准的竖版 B2 关键帧](examples/ai-ink-schools/keyframe-v04.png)
 - [5 秒竖版 MP4 样片](examples/ai-ink-schools/ai-ink-formation.mp4)
 
@@ -137,6 +155,7 @@ python -m pip install -r requirements.txt
 ├── requirements.txt
 ├── examples/
 │   ├── ai-ink-schools/
+│   ├── musk-fluid-ink/
 │   └── worker-factory/
 └── skill/
     └── create-chinese-ink-video/
@@ -156,4 +175,4 @@ python -m pip install -r requirements.txt
 
 ## 项目状态
 
-当前版本已经过竖屏人物工作场景和 AI 品牌山水场景测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
+当前版本已经过竖屏人物工作场景、AI 品牌山水场景和马斯克—火箭—特斯拉连续流体显影测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、连续流体墨场、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。

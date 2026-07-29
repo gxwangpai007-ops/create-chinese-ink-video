@@ -1,4 +1,4 @@
 interface:
   display_name: "中国水墨视频生成"
-  short_description: "生成强水墨分层关键帧、晕染动态样片与完整视频并执行质量审计"
-  default_prompt: "Use $create-chinese-ink-video to turn my topic or references into a validated layered Chinese ink video with smooth ink formation."
+  short_description: "生成分层水墨视频、连续流体显影与质量审计"
+  default_prompt: "Use $create-chinese-ink-video to turn my topic or references into a validated layered Chinese ink video with fluid-driven ink formation when appropriate."
