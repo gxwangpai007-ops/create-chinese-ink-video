@@ -4,9 +4,9 @@
 
 This Codex skill turns a brief, script, or visual reference into a controlled Chinese-ink video workflow—from style approval and layered scene formation to smooth previews and final QA.
 
-![马斯克、火箭与特斯拉连续流体水墨显影](examples/musk-fluid-ink/demo.gif)
+![马斯克、火箭与特斯拉连续流体及纤维墨团显影](examples/musk-fluid-ink/demo.gif)
 
-> 连续流体示例：火箭缓慢升空，喷口注入的墨流像墨在水中一样卷曲、回流和扩散；同一流体墨场依次带出特斯拉、道路与马斯克，最后由干笔轮廓锁定人物结构。
+> 混合形成示例：火箭喷气保持连续流体的卷曲、回流和扩散；特斯拉与马斯克由多个方向、尺寸和速度不同的纤维状缺口墨团逐步显现，最后由干笔轮廓锁定主体结构。
 
 ## 它解决什么问题
 
@@ -20,6 +20,7 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
 - 以水痕、积墨、笔触和轮廓锁定完成“形成”，而不是整图简单淡入
 - 让环境、色洗和主体共享同一套空间到达场，避免只让 Logo 或人物单独淡入
 - 用连续流体墨场同时驱动可见墨流和累积显影，形成卷曲、回流、分叉与缓慢均匀扩散
+- 用多个随机纤维状缺口墨团错时覆盖主体，形成类似 C 形墨云但不机械重复的渐进显影
 - 使用 48fps 中间渲染与 24fps 输出，降低低清预览的卡顿感
 - 通过逐镜审计、局部重渲染和最终 QA 保持跨镜头一致性
 
@@ -70,6 +71,7 @@ ink / atmosphere effects
 - 抽取 QA 帧并分析相邻帧变化
 - 编码平滑低清预览并探测视频参数
 - 生成连续流体密度视频和与其严格同步的累积显影母版
+- 生成纤维状缺口墨团的动态前缘与累积主体显影母版
 
 ### 连续流体墨场显影
 
@@ -84,6 +86,20 @@ ink / atmosphere effects
 ```
 
 同一密度场负责墨流和显影，避免烟雾与主体淡入彼此脱节。仓库中的 `render_fluid_ink_matte.py` 可以直接输出两路同步视频。
+
+### 纤维状缺口墨团显影
+
+当连续流体已经负责喷气和环境，而人物、车辆或产品仍需要更有机的局部形成时，Skill 使用多个随机墨团承担主体显影：
+
+```text
+流体到达主体区域
+→ 多个异向、异尺寸、错时的缺口墨团生长
+→ 纤维前缘经过后累积保留主体
+→ 缺口逐渐闭合
+→ 干笔结构最终锁形
+```
+
+墨团可以短暂呈现 C 形或弧形缺口，但不会生成规则字母、同心圆或永久白洞。`render_fibrous_ink_bloom.py` 可输出纤维前缘与累积显影两路同步母版。
 
 ## 安装
 
@@ -142,8 +158,8 @@ python -m pip install -r requirements.txt
 
 ## 示例文件
 
-- [马斯克连续流体水墨完整 MP4](examples/musk-fluid-ink/musk-fluid-ink-v07.mp4)
-- [马斯克连续流体关键帧联排](examples/musk-fluid-ink/contact-sheet.jpg)
+- [马斯克连续流体与纤维墨团完整 MP4](examples/musk-fluid-ink/musk-fluid-ink-v11.mp4)
+- [马斯克连续流体与纤维墨团关键帧联排](examples/musk-fluid-ink/contact-sheet.jpg)
 - [批准的竖版 B2 关键帧](examples/ai-ink-schools/keyframe-v04.png)
 - [5 秒竖版 MP4 样片](examples/ai-ink-schools/ai-ink-formation.mp4)
 
@@ -175,4 +191,4 @@ python -m pip install -r requirements.txt
 
 ## 项目状态
 
-当前版本已经过竖屏人物工作场景、AI 品牌山水场景和马斯克—火箭—特斯拉连续流体显影测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、连续流体墨场、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
+当前版本已经过竖屏人物工作场景、AI 品牌山水场景和马斯克—火箭—特斯拉混合形成测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、连续流体墨场、纤维状缺口墨团显影、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
