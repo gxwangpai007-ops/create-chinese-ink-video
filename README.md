@@ -4,9 +4,20 @@
 
 This Codex skill turns a brief, script, or visual reference into a controlled Chinese-ink video workflow—from style approval and layered scene formation to smooth previews and final QA.
 
-![马斯克、火箭与特斯拉连续流体及纤维墨团显影](examples/musk-fluid-ink/demo.gif)
-
-> 混合形成示例：火箭喷气保持连续流体的卷曲、回流和扩散；特斯拉与马斯克由多个方向、尺寸和速度不同的纤维状缺口墨团逐步显现，最后由干笔轮廓锁定主体结构。
+<table>
+  <tr>
+    <th width="50%">连续流体 × 纤维墨团</th>
+    <th width="50%">AI 山水 × 联合晕染</th>
+  </tr>
+  <tr>
+    <td><img src="examples/musk-fluid-ink/demo.gif" alt="马斯克、火箭与特斯拉连续流体及纤维墨团显影" width="100%"></td>
+    <td><img src="examples/ai-ink-schools/demo-v04-bloom.gif" alt="AI 品牌山水纤维墨团与环境联合显影" width="100%"></td>
+  </tr>
+  <tr>
+    <td valign="top">火箭喷气保持连续流体的卷曲、回流和扩散；特斯拉与马斯克由多方向、不同尺寸和速度的纤维状缺口墨团逐步显现。</td>
+    <td valign="top">中央水脉连接四组山水区域；Logo 与周围山体、雾气和色洗共同晕染形成，最后锁定标志结构并保留中央留白。</td>
+  </tr>
+</table>
 
 ## 它解决什么问题
 
@@ -161,7 +172,7 @@ python -m pip install -r requirements.txt
 - [马斯克连续流体与纤维墨团完整 MP4](examples/musk-fluid-ink/musk-fluid-ink-v11.mp4)
 - [马斯克连续流体与纤维墨团关键帧联排](examples/musk-fluid-ink/contact-sheet.jpg)
 - [批准的竖版 B2 关键帧](examples/ai-ink-schools/keyframe-v04.png)
-- [5 秒竖版 MP4 样片](examples/ai-ink-schools/ai-ink-formation.mp4)
+- [AI 山水联合晕染 8 秒竖版 MP4](examples/ai-ink-schools/ai-ink-formation-v04-bloom.mp4)
 
 ## 仓库结构
 
