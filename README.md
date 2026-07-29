@@ -19,6 +19,15 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
   </tr>
 </table>
 
+### 深圳城市 × 狂草书写
+
+<p>
+  <img src="examples/shenzhen-ink-city/demo.gif" alt="深圳城市纤维墨团生长与狂草书写" width="360">
+</p>
+
+城市天际线由纤维状墨团逐步形成，“深圳”以模型生成的狂草字形同步书写。  
+[查看 5 秒竖版 MP4](examples/shenzhen-ink-city/shenzhen-ink-city-v13-5s.mp4)
+
 ## 它解决什么问题
 
 很多“水墨视频”只是让一张水墨图淡入或缩放，人物、建筑和车辆并没有真正形成。这套 Skill 把水墨风格拆成可执行的制作流程：
