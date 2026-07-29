@@ -1,4 +1,4 @@
 interface:
   display_name: "中国水墨视频生成"
-  short_description: "生成分层中国水墨视频、连续流体墨场、纤维状墨团显影与质量审计"
-  default_prompt: "Use $create-chinese-ink-video to turn my topic or references into a validated layered Chinese ink video with fluid or fibrous-bloom formation when appropriate."
+  short_description: "生成分层水墨视频、连续流体、纤维墨团与多区域联合显影"
+  default_prompt: "Use $create-chinese-ink-video to turn my topic or references into a validated layered Chinese ink video with fluid, fibrous-bloom, or multi-region formation when appropriate."
