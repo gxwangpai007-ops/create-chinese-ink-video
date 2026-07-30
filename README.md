@@ -19,23 +19,34 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
   </tr>
 </table>
 
-### 深圳城市 × 狂草书写
-
-<p>
-  <img src="examples/shenzhen-ink-city/demo.gif" alt="深圳城市纤维墨团生长与狂草书写" width="360">
-</p>
-
-城市天际线由纤维状墨团逐步形成，“深圳”以模型生成的狂草字形同步书写。  
-[查看 5 秒竖版 MP4](examples/shenzhen-ink-city/shenzhen-ink-city-v13-5s.mp4)
-
-### 产品瓶底 × 同场水波与倒影
-
-<p>
-  <img src="examples/shower-gel-ink-ripple/demo.gif" alt="沐浴露瓶底浅水墨场与倒影联动" width="300">
-</p>
-
-扁平椭圆墨峰从真实瓶底接触点向外扩散；同一浅水高度场同时驱动墨色湿边、波面亮暗与水中倒影折射，产品实体保持锁定。
-[查看 6 秒竖版 MP4](examples/shower-gel-ink-ripple/shower-gel-wavefield-complete-v17.mp4)
+<table>
+  <tr>
+    <th width="50%">深圳城市 × 狂草书写</th>
+    <th width="50%">产品瓶底 × 同场水波与倒影</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="examples/shenzhen-ink-city/shenzhen-ink-city-v13-5s.mp4">
+        <img src="examples/shenzhen-ink-city/demo.gif" alt="深圳城市纤维墨团生长与狂草书写" width="100%">
+      </a>
+    </td>
+    <td valign="top">
+      <a href="examples/shower-gel-ink-ripple/shower-gel-wavefield-complete-v17.mp4">
+        <img src="examples/shower-gel-ink-ripple/demo.gif" alt="沐浴露瓶底浅水墨场与倒影联动" width="100%">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      城市天际线由纤维状墨团逐步形成，“深圳”以模型生成的狂草字形同步书写。<br>
+      <a href="examples/shenzhen-ink-city/shenzhen-ink-city-v13-5s.mp4">查看 5 秒竖版 MP4</a>
+    </td>
+    <td valign="top">
+      扁平椭圆墨峰从真实瓶底接触点向外扩散；同一浅水高度场同时驱动墨色湿边、波面亮暗与水中倒影折射，产品实体保持锁定。<br>
+      <a href="examples/shower-gel-ink-ripple/shower-gel-wavefield-complete-v17.mp4">查看 6 秒竖版 MP4</a>
+    </td>
+  </tr>
+</table>
 
 ## 它解决什么问题
 
