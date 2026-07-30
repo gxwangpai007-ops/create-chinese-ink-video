@@ -28,6 +28,15 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
 城市天际线由纤维状墨团逐步形成，“深圳”以模型生成的狂草字形同步书写。  
 [查看 5 秒竖版 MP4](examples/shenzhen-ink-city/shenzhen-ink-city-v13-5s.mp4)
 
+### 产品瓶底 × 同场水波与倒影
+
+<p>
+  <img src="examples/shower-gel-ink-ripple/demo.gif" alt="沐浴露瓶底浅水墨场与倒影联动" width="300">
+</p>
+
+扁平椭圆墨峰从真实瓶底接触点向外扩散；同一浅水高度场同时驱动墨色湿边、波面亮暗与水中倒影折射，产品实体保持锁定。
+[查看 6 秒竖版 MP4](examples/shower-gel-ink-ripple/shower-gel-wavefield-complete-v17.mp4)
+
 ## 它解决什么问题
 
 很多“水墨视频”只是让一张水墨图淡入或缩放，人物、建筑和车辆并没有真正形成。这套 Skill 把水墨风格拆成可执行的制作流程：
@@ -42,6 +51,7 @@ This Codex skill turns a brief, script, or visual reference into a controlled Ch
 - 用连续流体墨场同时驱动可见墨流和累积显影，形成卷曲、回流、分叉与缓慢均匀扩散
 - 用多个随机纤维状缺口墨团错时覆盖主体，形成类似 C 形墨云但不机械重复的渐进显影
 - 用配置化多区域编排器连接多个主体，让环境、局部墨团、精确锁形与留白保护共享同一时间轴
+- 用同一扁平浅水高度场驱动产品瓶底墨峰与倒影折射，避免把扩散特效叠在静态墨迹上
 - 使用 48fps 中间渲染与 24fps 输出，降低低清预览的卡顿感
 - 通过逐镜审计、局部重渲染和最终 QA 保持跨镜头一致性
 
@@ -198,6 +208,8 @@ python -m pip install -r requirements.txt
 - [马斯克连续流体与纤维墨团关键帧联排](examples/musk-fluid-ink/contact-sheet.jpg)
 - [批准的竖版 B2 关键帧](examples/ai-ink-schools/keyframe-v04.png)
 - [AI 山水联合晕染 8 秒竖版 MP4](examples/ai-ink-schools/ai-ink-formation-v04-bloom.mp4)
+- [产品瓶底同场水波与倒影 6 秒竖版 MP4](examples/shower-gel-ink-ripple/shower-gel-wavefield-complete-v17.mp4)
+- [产品瓶底同场水波与倒影关键帧联排](examples/shower-gel-ink-ripple/contact-sheet.jpg)
 
 ## 仓库结构
 
@@ -208,6 +220,7 @@ python -m pip install -r requirements.txt
 ├── examples/
 │   ├── ai-ink-schools/
 │   ├── musk-fluid-ink/
+│   ├── shower-gel-ink-ripple/
 │   └── worker-factory/
 └── skill/
     └── create-chinese-ink-video/
@@ -227,4 +240,4 @@ python -m pip install -r requirements.txt
 
 ## 项目状态
 
-当前版本已经过竖屏人物工作场景、AI 品牌山水场景和马斯克—火箭—特斯拉混合形成测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、连续流体墨场、纤维状缺口墨团显影、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
+当前版本已经过竖屏人物工作场景、AI 品牌山水场景、马斯克—火箭—特斯拉混合形成和产品瓶底同场水波—倒影测试，覆盖强水墨静态迁移、混合七层拆分、环境与主体联合晕染、连续流体墨场、纤维状缺口墨团显影、浅水墨峰与倒影折射、均匀空间到达和平滑低清预览。欢迎提交 Issue，分享新的题材压力测试、渲染器适配和失败案例。
